@@ -25,11 +25,7 @@ ENV TZ Europe/Berlin
 
 # Install Java.
 RUN \
-  apt-get install -y apt-utils software-properties-common \
-  && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
-  && add-apt-repository -y ppa:webupd8team/java \
-  && apt-get update && apt-get install -y oracle-java8-installer oracle-java8-set-default \
-  && add-apt-repository -y ppa:midori/ppa \
+  add-apt-repository -y ppa:midori/ppa \
   && apt-get update && apt-get install -y midori \
   && apt-get clean
   
