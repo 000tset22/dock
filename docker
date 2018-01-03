@@ -19,7 +19,7 @@ RUN apk --update add tzdata --no-cache && \
     cp /usr/share/zoneinfo/${TZ} /etc/localtime && echo $TZ > /etc/timezone && \
     apk del tzdata && \
     # Installing apps and clean up.
-    PACKAGE="wget ca-certificates git bash python xvfb x11vnc ttf-noto fluxbox net-tools socat supervisor xterm " && \
+    PACKAGE="wget ca-certificates git bash python xvfb x11vnc ttf-noto fluxbox net-tools midori socat supervisor xterm " && \
     apk update upgrade --no-cache && apk add --no-cache ${PACKAGE} && \
     # noVNC download
     git clone https://github.com/kanaka/noVNC.git /opt/noVNC && \
