@@ -25,7 +25,8 @@ ENV TZ Europe/Berlin
 
 # Install Java.
 RUN \
-  add-apt-repository -y ppa:midori/ppa \
+  apt-get update && apt-get install -y apt-utils software-properties-common \ 
+  && add-apt-repository -y ppa:midori/ppa \
   && apt-get update && apt-get install -y midori \
   && apt-get clean
   
